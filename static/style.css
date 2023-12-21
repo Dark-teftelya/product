@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background-color: #43A78B;
+  background-size: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.container .left-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 0;
+}
+
+.container .left-side .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container .left-side .main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.container .left-side .main .audio-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 40px;
+}
+
+.container .left-side .main .audio-content .song-name{
+  gap: 20px;
+}
+
+.container .left-side .header .logo {
+  background-color: #43A78B;
+  letter-spacing: 2px;
+  padding: 10px 15px 0 15px;
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Rubik', sans-serif;
+  font-size: 65px;
+  color: #FF9D66;
+  user-select: none;
+  position: relative;
+  transition: ease-in-out 0.5s;
+  margin-right: 40px;
+}
+
+.container .left-side .header .logo:hover {
+  margin-right: 0;
+  word-spacing: -15px;
+}
+
+.container .left-side .header .logo span,
+.container .left-side .header .logo:hover span {
+  transition: ease-in-out 0.5s, color 0.5s ease-in-out;
+}
+
+.container .left-side .header .logo::after {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background: #FF9D66;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+.container .left-side .header .logo:hover::after {
+  width: 100%;
+}
+
+.container .left-side .header .logo:hover span {
+  color: white;
+  text-shadow: none;
+}
+
+.container .left-side .header .logo:hover .left {
+  color: #A65353;
+}
+
+.container .left-side .header .logo .left,
+.container .left-side .header .logo .right {
+  position: relative;
+  z-index: 1;
+  text-shadow: 5px 0px 0px #A65353;
+}
+
+.container .left-side .header .logo .left::before {
+  content: "#";
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.container .left-side .header .logo:hover .left::before {
+  transition: opacity 0.4s ease-in-out 0.4s;
+  opacity: 1;
+}
+
+.container .left-side .about-us {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  color: white;
+  gap: 20px;
+}
+
+.container .left-side .about-us h2 {
+  padding: 0 20px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.container .left-side .about-us p {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.2;
+  color: white;
+}
+
+.container .right-side {
+  background: url('background.svg') no-repeat 10px;
+  overflow: hidden;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+}
+
+.container .right-side img.background-img {
+  border-radius: 50%;
+  background-color: #43A78B;
+  width: 150%;
+  left: 15%;
+  bottom: 15%;
+  position: absolute;
+  animation-name: rotation;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-repeat: no-repeat;
+}
+
+.left-side .download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left-side label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 20px;
+  width: 200px;
+  text-align: center;
+  background-color: #FF9D66;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s; /* Добавлено свойство transition для плавного эффекта */
+}
+
+.left-side label:hover {
+  color: #43A78B;
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+.left-side label p {
+  margin: 0;
+}
+
+.about-us .hidden-div {
+  overflow: hidden;
+}
+
+.about-us p, .about-us h2 {
+  transition: all 0.8s;
+}
+
+.about-us p {
+  transform: translateY(-150px); /* Сдвиг по вертикали на 50px */
+}
+
+.about-us h2 {
+  transform: translateY(150px); /* Сдвиг по вертикали на 50px */
+}
+
+audio {
+  width: 500px;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #FF9D66;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #ffffff;
+}
+
+.left-side .song-name {
+  color: white;
+  padding: 10px 20px 0 20px;
+  background-color: #43A78B;
+}
+
+.left-side img.gif {
+  max-width: 300px;
+  height: auto;
+}
+
+.display-none {
+  display: none;
+}
+
+.preloader {
+  background-color: #43A78B;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  gap: 20px;
+}
+
+.text {
+  color: white;
+  font-weight: 700;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

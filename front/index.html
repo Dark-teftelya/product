@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Познай музыку</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <link rel="shortcut icon" href="static/icon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700;900&display=swap');
+  </style>
+  <script src="static/js.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-side">
+      <div class="header">
+        <a href="index.html" class="logo">
+          <span class="left">ПОЗНАЙ</span> <span class="right">МУЗЫКУ</span>
+        </a>
+      </div>
+      <div class="main">
+        <div class="about-us">
+          <div class="hidden-div">
+            <h2>Легкое разделение музыки: Откройте для себя секреты звука</h2>
+          </div>
+          <div class="separator">
+            <svg height="4" width="600" id="separatorSvg">
+              <line x1="0" y1="2" x2="600" y2="2" stroke="white" stroke-width="5" />
+            </svg>
+          </div>
+          <div class="hidden-div">
+            <p>
+              Наш сервис позволяет вам загрузить аудиофайлы и мгновенно отделить музыку от голоса. Сделайте первый шаг к
+              раскрыванию музыкальных тайн с нашим простым и эффективным инструментом.
+            </p>
+          </div>
+        </div>
+        <div class="download-btn">
+          <input type="file" id="file" name="file" onchange="buttonClick()" accept="audio/mp3" class="display-none" />
+          <label for="file">
+            <p>Выберите файл</p>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="right-side">
+      <img src="static/background.png" alt="" class="background-img">
+    </div>
+  </div>
+</body>
+
+</html>
